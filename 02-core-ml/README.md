@@ -13,13 +13,16 @@ This module covers essential machine learning concepts and algorithms. You'll le
 | 📊 `supervised-vs-unsupervised/` | ML Paradigms | Understanding different types of machine learning approaches |
 | 📈 `linear-regression/` | Linear Regression | Predicting continuous values using linear relationships |
 | 📉 `logistic-regression/` | Logistic Regression | Binary and multiclass classification using logistic functions |
+| 🛡️ `regularization/` | Regularization Techniques | L1/L2 regularization, Ridge, Lasso, Elastic Net |
 | 🎯 `knn/` | K-Nearest Neighbors | Instance-based learning for classification and regression |
 | 🧮 `naive-bayes/` | Naive Bayes | Probabilistic classification based on Bayes' theorem |
-| 🎨 `feature-engineering/` | Feature Engineering | Creating and selecting features to improve model performance |
+| 📊 `model-evaluation/` | **Model Evaluation** | **Comprehensive model assessment techniques** |
+| ↳ `metrics-regression/` | Regression Metrics | RMSE, MAE, R², adjusted R² for regression models |
+| ↳ `metrics-classification/` | Classification Metrics | Accuracy, precision, recall, F1-score, ROC-AUC, confusion matrix |
+| ↳ `cross-validation/` | Cross Validation | K-fold, stratified, leave-one-out, time-series validation |
+| 🎨 `feature-engineering/` | Feature Engineering | Creating, selecting, and transforming features |
 | 🎪 `bias-variance/` | Bias-Variance Tradeoff | Understanding model complexity and generalization |
 | 🚫 `overfitting-underfitting/` | Overfitting & Underfitting | Diagnosing and addressing model performance issues |
-| 🛡️ `regularization/` | Regularization Techniques | L1/L2 regularization, preventing overfitting |
-| 📊 `model-evaluation/` | Model Evaluation | Metrics, cross-validation, and performance assessment |
 
 ## 🗺️ Learning Path
 
@@ -28,13 +31,16 @@ We recommend following this order:
 1. **supervised-vs-unsupervised/** - Understand the different ML paradigms
 2. **linear-regression/** - Start with the simplest regression algorithm
 3. **logistic-regression/** - Move to classification problems
-4. **knn/** - Learn instance-based learning methods
-5. **naive-bayes/** - Understand probabilistic classification
-6. **feature-engineering/** - Learn how to prepare data effectively
-7. **bias-variance/** - Understand the fundamental tradeoff in ML
-8. **overfitting-underfitting/** - Learn to diagnose model issues
-9. **regularization/** - Techniques to improve generalization
-10. **model-evaluation/** - Master how to properly assess models
+4. **regularization/** - Learn to control model complexity early
+5. **knn/** - Learn instance-based learning methods
+6. **naive-bayes/** - Understand probabilistic classification
+7. **model-evaluation/** - Master how to properly assess models
+   - **metrics-regression/** - Regression evaluation metrics
+   - **metrics-classification/** - Classification evaluation metrics
+   - **cross-validation/** - Proper validation techniques
+8. **feature-engineering/** - Learn how to prepare data effectively
+9. **bias-variance/** - Understand the fundamental tradeoff in ML
+10. **overfitting-underfitting/** - Learn to diagnose model issues
 
 However, feel free to jump to specific topics based on your needs!
 
@@ -51,9 +57,10 @@ However, feel free to jump to specific topics based on your needs!
 - **Hyperparameter Tuning**: Optimizing model performance
 
 ### 📊 Model Evaluation
-- **Evaluation Metrics**: Accuracy, precision, recall, F1, RMSE, R²
-- **Cross-Validation**: K-fold, stratified, time-series splits
-- **Bias-Variance Tradeoff**: Understanding model complexity
+- **Regression Metrics**: RMSE, MAE, R², adjusted R², explained variance
+- **Classification Metrics**: Accuracy, precision, recall, F1-score, ROC-AUC, confusion matrix
+- **Cross-Validation**: K-fold, stratified K-fold, leave-one-out, time-series splits
+- **Bias-Variance Tradeoff**: Understanding model complexity and generalization
 
 ## 📋 Prerequisites
 

@@ -3,7 +3,7 @@ Visual ML tutorials and notes for people who, like me, learn best when things ar
 
 ## Learning Path
 
-### [01. Foundations](./01-foundations/)
+### [01. Foundations](./01-foundations/README.md)
 - [Math Basics](./01-foundations/math-basics/)
 - [Linear Algebra](./01-foundations/linear-algebra/)
 - [Calculus for ML](./01-foundations/calculus-for-ml/)
@@ -12,7 +12,7 @@ Visual ML tutorials and notes for people who, like me, learn best when things ar
 - [Python, NumPy & Pandas](./01-foundations/python-numpy-pandas/)
 - [Visualization Basics](./01-foundations/visualization-basics/)
 
-### [02. Core Machine Learning](./02-core-ml/)
+### [02. Core Machine Learning](./02-core-ml/README.md)
 - [Supervised vs Unsupervised](./02-core-ml/supervised-vs-unsupervised/)
 - [Linear Regression](./02-core-ml/linear-regression/)
 - [Logistic Regression](./02-core-ml/logistic-regression/)
@@ -27,7 +27,7 @@ Visual ML tutorials and notes for people who, like me, learn best when things ar
 - [Bias-Variance Tradeoff](./02-core-ml/bias-variance/)
 - [Overfitting & Underfitting](./02-core-ml/overfitting-underfitting/)
 
-### [03. Classical Algorithms](./03-classical-algorithms/)
+### [03. Classical Algorithms](./03-classical-algorithms/README.md)
 
 #### [Tree-Based Models](./03-classical-algorithms/tree-based-models/)
 - [Decision Trees](./03-classical-algorithms/tree-based-models/decision-trees/)
@@ -53,7 +53,7 @@ Visual ML tutorials and notes for people who, like me, learn best when things ar
 - [Boosting](./03-classical-algorithms/ensemble-methods/boosting/)
 - [Stacking](./03-classical-algorithms/ensemble-methods/stacking/)
 
-### [04. Deep Learning](./04-deep-learning/)
+### [04. Deep Learning](./04-deep-learning/README.md)
 
 #### [DL Foundations](./04-deep-learning/dl-foundations/)
 - [Perceptron & MLP](./04-deep-learning/dl-foundations/perceptron-and-mlp/)
@@ -92,7 +92,7 @@ Visual ML tutorials and notes for people who, like me, learn best when things ar
 - [Custom Training Loops](./04-deep-learning/frameworks/tensorflow-keras/custom-training-loops/)
 - [TF Serving & TF Lite](./04-deep-learning/frameworks/tensorflow-keras/tf-serving-and-tf-lite/)
 
-### [05. Special Topics](./05-special-topics/)
+### [05. Special Topics](./05-special-topics/README.md)
 
 #### [Natural Language Processing (NLP)](./05-special-topics/nlp/)
 - [Classic NLP (BoW, TF-IDF)](./05-special-topics/nlp/classic-nlp-bow-tfidf/)
@@ -128,7 +128,7 @@ Visual ML tutorials and notes for people who, like me, learn best when things ar
 - [Graph Theory Basics](./05-special-topics/graph-learning/graph-theory-basics/)
 - [Graph Neural Networks](./05-special-topics/graph-learning/graph-neural-networks/)
 
-### [06. Practical ML](./06-practical-ml/)
+### [06. Practical ML](./06-practical-ml/README.md)
 
 #### [Data Preprocessing](./06-practical-ml/data-preprocessing/)
 - [Missing Data](./06-practical-ml/data-preprocessing/missing-data/)

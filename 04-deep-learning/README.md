@@ -1,190 +1,115 @@
-# 🧠 04 - Deep Learning
+# 04 - Deep Learning
 
-Welcome to the **Deep Learning** module of OpenMLAtlas! This is where you'll dive into neural networks and modern AI. From basic perceptrons to transformers and large language models, you'll learn the techniques powering today's most exciting AI applications.
+## Overview
 
-## 🎓 Overview
+This module introduces neural networks and deep learning, the technology behind modern AI breakthroughs. You'll learn the foundations of neural networks, work with industry-standard frameworks (PyTorch and TensorFlow), master computer vision with CNNs, understand sequence modeling with RNNs, and explore transformer architectures that power large language models.
 
-This module covers neural networks and deep learning—the technology behind computer vision, natural language processing, speech recognition, and generative AI. You'll learn both the theoretical foundations and practical implementation using PyTorch and TensorFlow/Keras.
+## Learning Path (Folder Order)
 
-## 🧩 Module Structure
+Follow this progressive deep learning curriculum:
 
-| Directory | Topic | Description |
-|-----------|-------|-------------|
-| ⚡ `dl-foundations/` | **Deep Learning Foundations** | **Core neural network concepts** |
-| ↳ `perceptron-and-mlp/` | Perceptron & MLP | Single neurons and multi-layer perceptrons |
-| ↳ `backpropagation/` | Backpropagation | How neural networks learn via gradient descent |
-| ↳ `initialization-and-activations/` | Initialization & Activations | Weight initialization, ReLU, sigmoid, tanh, etc. |
-| ↳ `optimization-sgd-adam/` | Optimization | SGD, momentum, Adam, learning rate schedules |
-| ↳ `regularization-dropout-batchnorm/` | Regularization | Dropout, batch normalization, early stopping |
-| 🖼️ `computer-vision/` | **Computer Vision** | **Neural networks for images** |
-| ↳ `cnn-basics/` | CNN Basics | Convolutions, pooling, feature maps |
-| ↳ `modern-cnns-resnet-densenet/` | Modern CNNs | ResNet, DenseNet, EfficientNet architectures |
-| ↳ `transfer-learning/` | Transfer Learning | Fine-tuning pre-trained models |
-| 🔄 `sequence-modeling/` | **Sequence Modeling** | **Neural networks for sequential data** |
-| ↳ `rnn-lstm-gru/` | RNN, LSTM, GRU | Recurrent architectures for sequences |
-| ↳ `sequence-to-sequence/` | Seq2Seq Models | Encoder-decoder architectures |
-| ↳ `attention-for-sequences/` | Attention Mechanisms | Attention for improved sequence modeling |
-| 🤖 `transformers-and-llms/` | **Transformers & LLMs** | **Modern AI architecture** |
-| ↳ `attention-basics/` | Attention Basics | Self-attention and multi-head attention |
-| ↳ `transformer-architecture/` | Transformer Architecture | Encoder-decoder, positional encoding, layer norm |
-| ↳ `llm-overview/` | Large Language Models | GPT, BERT, modern LLM architectures |
-| 🔧 `frameworks/` | **Deep Learning Frameworks** | **Practical implementation tools** |
-| 🔥 `frameworks/pytorch/` | **PyTorch** | **Primary DL framework** |
-| ↳ `pytorch-basics/` | PyTorch Basics | Tensors, modules, basic workflows |
-| ↳ `tensors-and-autograd/` | Tensors & Autograd | Automatic differentiation in PyTorch |
-| ↳ `datasets-and-dataloaders/` | Data Loading | Dataset classes, DataLoader, augmentation |
-| ↳ `training-loops/` | Training Loops | Complete training and validation pipelines |
-| ↳ `pytorch-model-export-deployment/` | Export & Deployment | TorchScript, ONNX, model serving |
-| 📊 `frameworks/tensorflow-keras/` | **TensorFlow & Keras** | **Alternative DL framework** |
-| ↳ `tf-keras-basics/` | TF/Keras Basics | Sequential, Functional, Subclassing APIs |
-| ↳ `tf-data-pipelines/` | TF Data Pipelines | tf.data for efficient data loading |
-| ↳ `custom-training-loops/` | Custom Training Loops | GradientTape and custom training |
-| ↳ `tf-serving-and-tf-lite/` | TF Serving & TF Lite | Model deployment and edge devices |
+1. **dl-foundations/** - Core neural network concepts and techniques
+   - perceptron-and-mlp/ - Single neuron and multi-layer perceptrons
+   - backpropagation/ - How neural networks learn through gradient flow
+   - initialization-and-activations/ - Weight initialization and activation functions (ReLU, tanh, sigmoid)
+   - optimization-sgd-adam/ - Optimizers: SGD, momentum, Adam, AdaGrad, RMSprop
+   - regularization-dropout-batchnorm/ - Preventing overfitting in neural networks
 
-## 🗺️ Learning Path
+2. **frameworks/** - Mastering deep learning frameworks
+   - pytorch/ - PyTorch ecosystem (primary framework)
+     - pytorch-basics/ - Tensors, modules, and basic operations
+     - tensors-and-autograd/ - Automatic differentiation engine
+     - datasets-and-dataloaders/ - Efficient data loading pipelines
+     - training-loops/ - Custom training and validation loops
+     - pytorch-model-export-deployment/ - Saving and deploying PyTorch models
+   - tensorflow-keras/ - TensorFlow/Keras ecosystem
+     - tf-keras-basics/ - High-level Keras API
+     - tf-data-pipelines/ - TensorFlow data pipelines
+     - custom-training-loops/ - Advanced TensorFlow training
+     - tf-serving-and-tf-lite/ - Model serving and mobile deployment
 
-We recommend following this order:
+3. **computer-vision/** - Deep learning for images
+   - cnn-basics/ - Convolutional layers, pooling, and CNN architectures
+   - modern-cnns-resnet-densenet/ - Advanced architectures: ResNet, DenseNet, EfficientNet
+   - transfer-learning/ - Using pre-trained models for new tasks
 
-1. **dl-foundations/** - Start with the fundamentals
-   - **perceptron-and-mlp/** - Understand basic neural networks
-   - **backpropagation/** - Learn how networks learn
-   - **initialization-and-activations/** - Master network setup
-   - **optimization-sgd-adam/** - Learn training techniques
-   - **regularization-dropout-batchnorm/** - Prevent overfitting
-2. **frameworks/pytorch/** - Learn practical implementation
-   - **pytorch-basics/** - Get started with PyTorch
-   - **tensors-and-autograd/** - Understand automatic differentiation
-   - **datasets-and-dataloaders/** - Handle data efficiently
-   - **training-loops/** - Build complete training pipelines
-   - **pytorch-model-export-deployment/** - Deploy your models
-3. **computer-vision/** - Apply to images
-   - **cnn-basics/** - Learn convolutional networks
-   - **modern-cnns-resnet-densenet/** - Study state-of-the-art architectures
-   - **transfer-learning/** - Leverage pre-trained models
-4. **sequence-modeling/** - Apply to sequential data
-   - **rnn-lstm-gru/** - Learn recurrent networks
-   - **sequence-to-sequence/** - Build encoder-decoder models
-   - **attention-for-sequences/** - Add attention mechanisms
-5. **transformers-and-llms/** - Master modern AI
-   - **attention-basics/** - Understand self-attention
-   - **transformer-architecture/** - Learn the transformer
-   - **llm-overview/** - Explore large language models
-6. **frameworks/tensorflow-keras/** - (Optional) Learn alternative framework
-   - **tf-keras-basics/** - Get started with TensorFlow
-   - **tf-data-pipelines/** - Efficient data handling
-   - **custom-training-loops/** - Advanced training control
-   - **tf-serving-and-tf-lite/** - Production deployment
+4. **sequence-modeling/** - Deep learning for sequential data
+   - rnn-lstm-gru/ - Recurrent networks and their variants
+   - sequence-to-sequence/ - Encoder-decoder architectures
+   - attention-for-sequences/ - Attention mechanisms for sequences
 
-However, feel free to jump to specific topics based on your needs!
+5. **transformers-and-llms/** - Modern transformer-based models
+   - attention-basics/ - Self-attention and multi-head attention
+   - transformer-architecture/ - Complete transformer model architecture
+   - llm-overview/ - Large Language Models: BERT, GPT, T5, and beyond
 
-## 🔑 What You'll Learn
+## Resources
 
-### ⚡ Neural Network Foundations
-- **Network Architecture**: Perceptrons, MLPs, activation functions
-- **Learning Process**: Backpropagation, gradient descent, optimization
-- **Best Practices**: Initialization, normalization, regularization
+### 📚 Books
 
-### 🖼️ Computer Vision with Deep Learning
-- **CNNs**: Convolutional layers, pooling, feature hierarchies
-- **Modern Architectures**: ResNet, DenseNet, EfficientNet, Vision Transformers
-- **Transfer Learning**: Fine-tuning pre-trained models for your tasks
+- **"Deep Learning"** by Goodfellow, Bengio, Courville - The DL bible (free online)
+- **"Hands-On Machine Learning"** by Aurélien Géron - Practical PyTorch and TensorFlow
+- **"Deep Learning with PyTorch"** by Stevens, Antiga, Viehmann - Official PyTorch book
+- **"Dive into Deep Learning"** (d2l.ai) - Interactive DL book (free online)
+- **"Neural Networks and Deep Learning"** by Michael Nielsen - Free online, very clear
+- **"Understanding Deep Learning"** by Simon Prince - Modern DL textbook (2023)
+- **"Programming PyTorch for Deep Learning"** by Ian Pointer - Practical PyTorch guide
 
-### 🔄 Sequential Data Processing
-- **RNNs**: Handling sequential and temporal data
-- **Advanced RNNs**: LSTMs and GRUs for long-term dependencies
-- **Seq2Seq**: Encoder-decoder models for translation, summarization
+### 🎥 Videos
 
-### 🤖 Transformers and Modern AI
-- **Attention Mechanisms**: Self-attention and multi-head attention
-- **Transformer Architecture**: The foundation of modern NLP and beyond
-- **Large Language Models**: GPT, BERT, and state-of-the-art LLMs
+- **Fast.ai Practical Deep Learning for Coders** - Top-down DL approach
+- **Stanford CS231n - CNN for Visual Recognition** - Classic computer vision course
+- **Stanford CS224n - NLP with Deep Learning** - Transformers and language models
+- **MIT 6.S191 Introduction to Deep Learning** - Comprehensive DL intro
+- **Andrej Karpathy: Neural Networks Zero to Hero** - Build GPT from scratch
+- **3Blue1Brown: Neural Networks Series** - Beautiful visual explanations
+- **DeepLearning.AI TensorFlow Course** (Coursera) - Andrew Ng's TensorFlow course
+- **PyTorch Official Tutorials** - YouTube channel with framework tutorials
+- **Yannic Kilcher** - Paper reviews and explanations
 
-### 🔧 Framework Mastery
-- **PyTorch**: Industry-standard framework for research and production
-- **TensorFlow/Keras**: Google's framework for production deployment
-- **Model Deployment**: Exporting, serving, and optimizing models
+### 🎧 Podcasts
 
-## 📋 Prerequisites
+- **Practical AI** - DL applications and industry trends
+- **The TWIML AI Podcast** - Interviews with DL researchers
+- **Gradient Dissent** - ML engineering and DL systems
+- **Lex Fridman Podcast** - Deep conversations with AI pioneers (Hinton, LeCun, Bengio)
+- **Machine Learning Street Talk** - Technical DL discussions
+- **AI Alignment Podcast** - Safety and alignment in DL
+- **The Robot Brains Podcast** - Robotics and deep reinforcement learning
 
-Before starting this module, you should be familiar with:
-- **Linear Algebra**: Matrix multiplication, gradients, chain rule
-- **Calculus**: Partial derivatives, gradients, optimization
-- **Python**: Object-oriented programming, NumPy
-- **Classical ML**: Model training, evaluation, overfitting
-- **Machine Learning Basics**: Loss functions, train/validation/test splits
-- Completed **[03-classical-algorithms/](../03-classical-algorithms/)** or equivalent knowledge
+### 📄 Articles & Papers
 
-## 🎬 Getting Started
+**Foundational Papers:**
+- **"ImageNet Classification with Deep CNNs"** (AlexNet, 2012) - Started the deep learning revolution
+- **"Very Deep Convolutional Networks"** (VGG, 2014) - Deeper networks
+- **"Deep Residual Learning"** (ResNet, 2015) - Skip connections enable very deep networks
+- **"Attention Is All You Need"** (2017) - Original Transformer paper
+- **"BERT: Pre-training of Deep Bidirectional Transformers"** (2018) - Bidirectional language models
+- **"GPT-3: Language Models are Few-Shot Learners"** (2020) - Large language model scaling
 
-1. Ensure you have completed the prerequisites
-2. Install required libraries:
-   ```bash
-   # For PyTorch (CUDA 11.8 example - adjust based on your system)
-   pip install torch torchvision torchaudio
+**Learning Resources:**
+- **Distill.pub** - Visual and interactive ML research articles
+- **The Illustrated Transformer** by Jay Alammar - Best transformer visual guide
+- **Understanding LSTM Networks** by Chris Olah - Clear RNN/LSTM explanation
+- **Andrej Karpathy's Blog** - "The Unreasonable Effectiveness of RNNs" and more
+- **PyTorch Tutorials** (pytorch.org/tutorials) - Official comprehensive guides
+- **TensorFlow Tutorials** (tensorflow.org/tutorials) - Official TF learning resources
 
-   # For TensorFlow
-   pip install tensorflow
+### 🌐 HTML/Interactive Resources
 
-   # Additional utilities
-   pip install numpy pandas matplotlib jupyter
-   ```
-3. **GPU Setup** (highly recommended for deep learning):
-   - Check if you have a CUDA-compatible GPU
-   - Install appropriate CUDA toolkit and cuDNN
-   - Verify GPU access in PyTorch: `torch.cuda.is_available()`
-4. Start with `dl-foundations/` before moving to applications
-5. Work through frameworks section to build practical skills
-
-## 📚 How to Use This Module
-
-Each subdirectory contains:
-- **Theory**: Mathematical foundations and intuitive explanations (`.md` files)
-- **Jupyter Notebooks**: Interactive implementations with visualizations (`.ipynb` files)
-- **Code Examples**: Complete, runnable neural network implementations
-- **Architecture Diagrams**: Visual representations of network structures
-- **Exercises**: Build and train networks from scratch
-- **Projects**: Real-world applications (image classification, text generation, etc.)
-- **Resources**: Papers, blog posts, and additional references
-
-### 🔧 Working with Jupyter Notebooks
-
-To run the interactive examples:
-```bash
-# Start Jupyter Notebook
-jupyter notebook
-
-# Or use JupyterLab for a better experience
-jupyter lab
-```
-
-Each notebook includes:
-- 📝 Detailed explanations of network architectures
-- 📊 Training curves, loss plots, and performance metrics
-- 🧪 Experiments with different hyperparameters
-- 🎨 Visualizations of learned features and attention patterns
-- 💪 Hands-on exercises to build networks yourself
-- 🎯 Real datasets (MNIST, CIFAR-10, text corpora, etc.)
-
-### ⚡ GPU Acceleration
-
-Deep learning benefits enormously from GPU acceleration. The notebooks will detect and use GPUs automatically. If you don't have a GPU:
-- Use Google Colab (free GPU access)
-- Use smaller models and datasets
-- Reduce batch sizes and epochs
-
-## 🚀 Next Steps
-
-Once you've mastered deep learning fundamentals, move on to:
-- **[05-special-topics/](../05-special-topics/)** - Domain-specific applications (NLP, generative models, RL, etc.)
-
-## 💬 Contributing
-
-Found an error? Have a suggestion? Feel free to open an issue or submit a pull request!
-
-## 📜 License
-
-This project is part of OpenMLAtlas - An open-source machine learning learning resource.
+- **TensorFlow Playground** (playground.tensorflow.org) - Interactive neural network visualization
+- **CNN Explainer** (poloclub.github.io/cnn-explainer) - Interactive CNN visualization
+- **Transformer Explainer** - Interactive attention visualization
+- **Netron** (netron.app) - Neural network visualizer
+- **PyTorch Hub** - Pre-trained models repository
+- **TensorFlow Hub** - Pre-trained model library
+- **Hugging Face** (huggingface.co) - Transformers, datasets, and model hub
+- **Papers with Code** (paperswithcode.com) - Papers with implementation code
+- **Google Colab** - Free GPU/TPU notebooks
+- **Kaggle Kernels** - Free GPU access with datasets
+- **Gradient by Paperspace** - Cloud GPU notebooks
 
 ---
 
-✨ **Remember**: Deep learning is powerful but requires substantial computational resources and data. Start with small experiments, understand the fundamentals, and gradually scale up. GPU access will make your learning journey much faster!
+**Previous Module:** [03-classical-algorithms](../03-classical-algorithms/) - Classical ML Algorithms
+**Next Module:** [05-special-topics](../05-special-topics/) - Special Topics and Applications

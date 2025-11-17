@@ -1,126 +1,78 @@
-# 🎯 02 - Core Machine Learning
+# 02 - Core Machine Learning
 
-Welcome to the **Core Machine Learning** module of OpenMLAtlas! This is where you begin your journey into the world of machine learning algorithms. Here, you'll learn the fundamental supervised and unsupervised learning techniques that form the backbone of modern ML.
+## Overview
 
-## 🎓 Overview
+This module introduces the fundamental concepts and algorithms of machine learning. You'll learn the core supervised and unsupervised learning paradigms, essential algorithms like linear and logistic regression, and critical concepts like model evaluation and regularization. These concepts are the building blocks for all advanced ML techniques.
 
-This module covers essential machine learning concepts and algorithms. You'll learn how to build, train, and evaluate ML models, understand their strengths and limitations, and apply them to real-world problems.
+## Learning Path (Folder Order)
 
-## 🧩 Module Structure
+Follow this sequence to build a solid ML foundation:
 
-| Directory | Topic | Description |
-|-----------|-------|-------------|
-| 📊 `supervised-vs-unsupervised/` | ML Paradigms | Understanding different types of machine learning approaches |
-| 📈 `linear-regression/` | Linear Regression | Predicting continuous values using linear relationships |
-| 📉 `logistic-regression/` | Logistic Regression | Binary and multiclass classification using logistic functions |
-| 🛡️ `regularization/` | Regularization Techniques | L1/L2 regularization, Ridge, Lasso, Elastic Net |
-| 🎯 `knn/` | K-Nearest Neighbors | Instance-based learning for classification and regression |
-| 🧮 `naive-bayes/` | Naive Bayes | Probabilistic classification based on Bayes' theorem |
-| 📊 `model-evaluation/` | **Model Evaluation** | **Comprehensive model assessment techniques** |
-| ↳ `metrics-regression/` | Regression Metrics | RMSE, MAE, R², adjusted R² for regression models |
-| ↳ `metrics-classification/` | Classification Metrics | Accuracy, precision, recall, F1-score, ROC-AUC, confusion matrix |
-| ↳ `cross-validation/` | Cross Validation | K-fold, stratified, leave-one-out, time-series validation |
-| 🎨 `feature-engineering/` | Feature Engineering | Creating, selecting, and transforming features |
-| 🎪 `bias-variance/` | Bias-Variance Tradeoff | Understanding model complexity and generalization |
-| 🚫 `overfitting-underfitting/` | Overfitting & Underfitting | Diagnosing and addressing model performance issues |
+1. **supervised-vs-unsupervised/** - Understanding the two main ML paradigms and when to use each
+2. **linear-regression/** - Your first ML algorithm: predicting continuous values
+3. **logistic-regression/** - Classification with probability estimation
+4. **knn/** - K-Nearest Neighbors: instance-based learning algorithm
+5. **naive-bayes/** - Probabilistic classification using Bayes' theorem
+6. **model-evaluation/** - How to properly assess model performance
+   - metrics-regression/ - MSE, RMSE, MAE, R² score
+   - metrics-classification/ - Accuracy, Precision, Recall, F1, ROC-AUC
+   - cross-validation/ - K-fold, stratified, and leave-one-out validation
+7. **bias-variance/** - Understanding the bias-variance tradeoff
+8. **overfitting-underfitting/** - Recognizing and diagnosing model problems
+9. **regularization/** - L1 (Lasso), L2 (Ridge), and Elastic Net techniques
+10. **feature-engineering/** - Creating and selecting meaningful features
 
-## 🗺️ Learning Path
+## Resources
 
-We recommend following this order:
+### 📚 Books
 
-1. **supervised-vs-unsupervised/** - Understand the different ML paradigms
-2. **linear-regression/** - Start with the simplest regression algorithm
-3. **logistic-regression/** - Move to classification problems
-4. **regularization/** - Learn to control model complexity early
-5. **knn/** - Learn instance-based learning methods
-6. **naive-bayes/** - Understand probabilistic classification
-7. **model-evaluation/** - Master how to properly assess models
-   - **metrics-regression/** - Regression evaluation metrics
-   - **metrics-classification/** - Classification evaluation metrics
-   - **cross-validation/** - Proper validation techniques
-8. **feature-engineering/** - Learn how to prepare data effectively
-9. **bias-variance/** - Understand the fundamental tradeoff in ML
-10. **overfitting-underfitting/** - Learn to diagnose model issues
+- **"An Introduction to Statistical Learning"** (ISLR) by James, Witten, Hastie, Tibshirani - Best beginner ML book, free PDF
+- **"The Elements of Statistical Learning"** (ESL) - Advanced companion to ISLR
+- **"Hands-On Machine Learning with Scikit-Learn"** by Aurélien Géron - Practical ML with Python
+- **"Pattern Recognition and Machine Learning"** by Christopher Bishop - Rigorous mathematical treatment
+- **"Machine Learning: A Probabilistic Perspective"** by Kevin Murphy - Comprehensive ML reference
+- **"Learning from Data"** by Yaser Abu-Mostafa - Concise ML theory
 
-However, feel free to jump to specific topics based on your needs!
+### 🎥 Videos
 
-## 🔑 What You'll Learn
+- **Stanford CS229 - Machine Learning** (Andrew Ng) - Classic ML course on YouTube
+- **StatQuest: Machine Learning** - Clear explanations with visual examples
+- **Sentdex Machine Learning Playlist** - Practical Python ML tutorials
+- **Google's Machine Learning Crash Course** - Free, comprehensive introduction
+- **MIT 6.034 Artificial Intelligence** - Foundational AI/ML concepts
+- **fast.ai Practical Deep Learning** - Top-down approach to ML
 
-### 🎯 Supervised Learning
-- **Regression**: Linear regression for continuous predictions
-- **Classification**: Logistic regression, KNN, Naive Bayes for categorical predictions
-- **Model Comparison**: When to use which algorithm
+### 🎧 Podcasts
 
-### 🔬 Model Development
-- **Feature Engineering**: Creating meaningful features from raw data
-- **Regularization**: L1 (Lasso), L2 (Ridge), and Elastic Net
-- **Hyperparameter Tuning**: Optimizing model performance
+- **Machine Learning Guide** - Comprehensive ML concept explanations
+- **TWiML&AI (This Week in ML & AI)** - Industry trends and research
+- **Gradient Dissent** - Weights & Biases podcast on ML engineering
+- **Lex Fridman Podcast** - Deep conversations with ML researchers
+- **Data Skeptic** - Accessible ML and data science topics
+- **Practical AI** - Real-world ML applications
 
-### 📊 Model Evaluation
-- **Regression Metrics**: RMSE, MAE, R², adjusted R², explained variance
-- **Classification Metrics**: Accuracy, precision, recall, F1-score, ROC-AUC, confusion matrix
-- **Cross-Validation**: K-fold, stratified K-fold, leave-one-out, time-series splits
-- **Bias-Variance Tradeoff**: Understanding model complexity and generalization
+### 📄 Articles & Papers
 
-## 📋 Prerequisites
+- **"A Few Useful Things to Know About Machine Learning"** by Pedro Domingos - Essential ML insights
+- **"Random Forests"** by Leo Breiman - Foundational ensemble method paper
+- **Scikit-learn User Guide** - Official documentation with examples
+- **Machine Learning Mastery Blog** - Tutorials on every ML topic
+- **Towards Data Science** - Community articles on ML concepts
+- **"Regularization and Variable Selection via the Elastic Net"** - Original Elastic Net paper
+- **Google's Rules of Machine Learning** - Best practices from Google
 
-Before starting this module, you should be familiar with:
-- **Linear Algebra**: Vectors, matrices, matrix operations
-- **Calculus**: Derivatives, gradients, optimization
-- **Probability & Statistics**: Distributions, statistical inference
-- **Python/NumPy/Pandas**: Basic data manipulation
-- Completed **[01-foundations/](../01-foundations/)** or equivalent knowledge
+### 🌐 HTML/Interactive Resources
 
-## 🎬 Getting Started
-
-1. Ensure you have completed the prerequisites
-2. Install required libraries: `pip install numpy pandas matplotlib scikit-learn jupyter`
-3. Start with the recommended learning path or jump to a specific topic
-4. Work through theory, code examples, and exercises in each subdirectory
-5. Apply your knowledge through hands-on projects
-
-## 📚 How to Use This Module
-
-Each subdirectory contains:
-- **Theory**: Concept explanations and mathematical foundations (`.md` files)
-- **Jupyter Notebooks**: Interactive code examples with visualizations (`.ipynb` files)
-- **HTML Content**: Web-based interactive tutorials and explanations (`.html` files)
-- **Images**: Diagrams, plots, and visual explanations (`images/` folder)
-- **Exercises**: Practice problems to reinforce your learning
-- **Projects**: Hands-on projects to apply what you've learned
-- **Resources**: Additional reading materials and references
-
-### 🔧 Working with Jupyter Notebooks
-
-To run the interactive examples:
-```bash
-# Start Jupyter Notebook
-jupyter notebook
-
-# Or use JupyterLab for a better experience
-jupyter lab
-```
-
-Each notebook includes:
-- 📝 Step-by-step code explanations with inline comments
-- 📊 Interactive visualizations and plots
-- 🧪 Runnable examples you can modify and experiment with
-- 💪 Practice exercises embedded in the notebook
-- 🎯 Real-world applications and use cases
-
-## 🚀 Next Steps
-
-Once you've mastered core ML concepts, move on to:
-- **[03-classical-algorithms/](../03-classical-algorithms/)** - Advanced classical ML methods (trees, SVM, clustering)
-
-## 💬 Contributing
-
-Found an error? Have a suggestion? Feel free to open an issue or submit a pull request!
-
-## 📜 License
-
-This project is part of OpenMLAtlas - An open-source machine learning learning resource.
+- **Scikit-learn Interactive Examples** (scikit-learn.org) - Runnable code examples
+- **MLU-Explain** (mlu-explain.github.io) - Amazon's visual ML explanations
+- **Tensorflow Playground** - Neural network visualization (also useful for understanding basics)
+- **R2D3: Visual Introduction to Machine Learning** - Beautiful visual ML tutorial
+- **Google Colab** - Free cloud Jupyter notebooks with GPU
+- **Kaggle** - Competitions, datasets, and notebooks
+- **UCI Machine Learning Repository** - Classic ML datasets
+- **OpenML** - Platform for sharing ML experiments
 
 ---
 
-✨ **Remember**: These are the fundamental building blocks of machine learning. Understanding them deeply will help you grasp more advanced concepts later!
+**Previous Module:** [01-foundations](../01-foundations/) - Mathematical Foundations
+**Next Module:** [03-classical-algorithms](../03-classical-algorithms/) - Classical ML Algorithms

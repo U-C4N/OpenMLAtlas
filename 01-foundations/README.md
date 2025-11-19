@@ -9,6 +9,7 @@ This module covers the essential mathematical and programming prerequisites for 
 Master these topics in sequence for optimal understanding:
 
 1. **math-basics/** - Basic mathematical concepts and notation used throughout ML
+    - **Interactive App**: Includes a multilingual (EN, ES, FR, RU, TR), black-and-white web application for primary school level math practice (Addition, Subtraction, Multiplication, Division).
 2. **linear-algebra/** - Vectors, matrices, eigenvalues, and matrix operations essential for data representation
 3. **calculus-for-ml/** - Derivatives, gradients, and optimization concepts for understanding how models learn
 4. **probability-statistics/** - Probability distributions, statistical inference, and hypothesis testing

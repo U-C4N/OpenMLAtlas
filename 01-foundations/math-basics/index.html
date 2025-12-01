@@ -1,71 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Math / Temel Matematik</title>
+    <title>Math Basics | OpenMLAtlas</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
 </head>
-
 <body>
-    <div class="container">
+    <!-- Language Selection Screen -->
+    <div id="language-screen" class="screen active">
+        <div class="logo">OpenMLAtlas</div>
+        <h1 id="lang-title">Select Language</h1>
+        <div class="language-buttons">
+            <button class="lang-btn" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="tr">Turkce</button>
+            <button class="lang-btn" data-lang="ru">Pyccкий</button>
+            <button class="lang-btn" data-lang="ko">한국어</button>
+            <button class="lang-btn" data-lang="ja">日本語</button>
+            <button class="lang-btn" data-lang="es">Espanol</button>
+        </div>
+        <div class="year-badge">2025</div>
+    </div>
+
+    <!-- Main Menu Screen -->
+    <div id="menu-screen" class="screen">
         <header>
-            <h1 id="app-title">Basic Math</h1>
-            <div class="language-selector">
-                <button onclick="setLanguage('en')" class="lang-btn active" data-lang="en">EN</button>
-                <button onclick="setLanguage('es')" class="lang-btn" data-lang="es">ES</button>
-                <button onclick="setLanguage('fr')" class="lang-btn" data-lang="fr">FR</button>
-                <button onclick="setLanguage('ru')" class="lang-btn" data-lang="ru">RU</button>
-                <button onclick="setLanguage('tr')" class="lang-btn" data-lang="tr">TR</button>
+            <div class="logo-small">OpenMLAtlas</div>
+            <button id="change-lang-btn" class="icon-btn" title="Change Language">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+        </header>
+        <h1 id="menu-title">Math Basics</h1>
+        <p id="menu-subtitle">Learn fundamental math operations in 3D</p>
+
+        <div class="difficulty-selector">
+            <span id="difficulty-label">Difficulty:</span>
+            <div class="difficulty-buttons">
+                <button class="diff-btn active" data-diff="easy" id="diff-easy">Easy</button>
+                <button class="diff-btn" data-diff="medium" id="diff-medium">Medium</button>
+                <button class="diff-btn" data-diff="hard" id="diff-hard">Hard</button>
+            </div>
+        </div>
+
+        <div class="mode-buttons">
+            <button class="mode-btn" data-mode="learn">
+                <span class="mode-icon">
+                    <svg viewBox="0 0 24 24" width="48" height="48">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </span>
+                <span class="mode-name" id="mode-learn">Learn</span>
+                <span class="mode-desc" id="mode-learn-desc">Theory & 3D visualization</span>
+            </button>
+            <button class="mode-btn" data-mode="practice">
+                <span class="mode-icon">
+                    <svg viewBox="0 0 24 24" width="48" height="48">
+                        <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <line x1="12" y1="22" x2="12" y2="8.5" stroke="currentColor" stroke-width="2"/>
+                        <line x1="22" y1="8.5" x2="12" y2="8.5" stroke="currentColor" stroke-width="2"/>
+                        <line x1="2" y1="8.5" x2="12" y2="8.5" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </span>
+                <span class="mode-name" id="mode-practice">Practice</span>
+                <span class="mode-desc" id="mode-practice-desc">Interactive exercises</span>
+            </button>
+            <button class="mode-btn" data-mode="test">
+                <span class="mode-icon">
+                    <svg viewBox="0 0 24 24" width="48" height="48">
+                        <rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </span>
+                <span class="mode-name" id="mode-test">Test</span>
+                <span class="mode-desc" id="mode-test-desc">Quiz with scoring</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Operation Selection Screen -->
+    <div id="operation-screen" class="screen">
+        <header>
+            <button id="back-to-menu" class="icon-btn">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M19 12H5M12 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <h2 id="operation-title">Select Operation</h2>
+            <div class="spacer"></div>
+        </header>
+        <div class="operation-buttons">
+            <button class="op-btn" data-op="add">
+                <span class="op-symbol">+</span>
+                <span class="op-name" id="op-add">Addition</span>
+            </button>
+            <button class="op-btn" data-op="sub">
+                <span class="op-symbol">-</span>
+                <span class="op-name" id="op-sub">Subtraction</span>
+            </button>
+            <button class="op-btn" data-op="mul">
+                <span class="op-symbol">x</span>
+                <span class="op-name" id="op-mul">Multiplication</span>
+            </button>
+            <button class="op-btn" data-op="div">
+                <span class="op-symbol">/</span>
+                <span class="op-name" id="op-div">Division</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Learn Screen -->
+    <div id="learn-screen" class="screen">
+        <header>
+            <button id="back-from-learn" class="icon-btn">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M19 12H5M12 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <h2 id="learn-title">Learning</h2>
+            <button id="toggle-dither" class="icon-btn" title="Toggle Dithering">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <rect x="3" y="3" width="7" height="7" fill="currentColor"/>
+                    <rect x="14" y="3" width="7" height="7" fill="none" stroke="currentColor" stroke-width="1"/>
+                    <rect x="3" y="14" width="7" height="7" fill="none" stroke="currentColor" stroke-width="1"/>
+                    <rect x="14" y="14" width="7" height="7" fill="currentColor"/>
+                </svg>
+            </button>
+        </header>
+        <div id="learn-content">
+            <div id="theory-panel">
+                <h3 id="theory-title">Theory</h3>
+                <p id="theory-text"></p>
+            </div>
+            <div id="canvas-container"></div>
+            <div id="example-panel">
+                <div id="example-equation"></div>
+                <button id="next-example" class="primary-btn">Next Example</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Practice Screen -->
+    <div id="practice-screen" class="screen">
+        <header>
+            <button id="back-from-practice" class="icon-btn">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M19 12H5M12 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <h2 id="practice-title">Practice</h2>
+            <button id="toggle-dither-practice" class="icon-btn" title="Toggle Dithering">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <rect x="3" y="3" width="7" height="7" fill="currentColor"/>
+                    <rect x="14" y="3" width="7" height="7" fill="none" stroke="currentColor" stroke-width="1"/>
+                    <rect x="3" y="14" width="7" height="7" fill="none" stroke="currentColor" stroke-width="1"/>
+                    <rect x="14" y="14" width="7" height="7" fill="currentColor"/>
+                </svg>
+            </button>
+        </header>
+        <div id="practice-content">
+            <div id="practice-canvas-container"></div>
+            <div id="practice-panel">
+                <div id="practice-equation"></div>
+                <input type="number" id="practice-input" placeholder="?">
+                <div id="practice-feedback"></div>
+                <button id="check-answer" class="primary-btn">Check</button>
+                <button id="next-practice" class="secondary-btn" style="display:none;">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test Screen -->
+    <div id="test-screen" class="screen">
+        <header>
+            <button id="back-from-test" class="icon-btn">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M19 12H5M12 19l-7-7 7-7" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <h2 id="test-title">Test</h2>
+            <div id="test-score">
+                <span id="score-label">Score:</span>
+                <span id="score-value">0/0</span>
             </div>
         </header>
-
-        <nav>
-            <button onclick="showSection('learn')" id="nav-learn" class="nav-btn active">Learn</button>
-            <button onclick="showSection('play')" id="nav-play" class="nav-btn">Play</button>
-            <button onclick="showSection('test')" id="nav-test" class="nav-btn">Test</button>
-        </nav>
-
-        <main id="content-area">
-            <!-- Content will be injected here by JavaScript -->
-            <div id="learn-section" class="section">
-                <h2 id="learn-title">Learn Math</h2>
-                <div id="math-notes" class="notes-grid"></div>
-            </div>
-
-            <div id="play-section" class="section hidden">
-                <h2 id="play-title">Play Game</h2>
-                <div class="game-container">
-                    <div id="game-question" class="big-text">2 + 2 = ?</div>
-                    <input type="number" id="game-input" placeholder="?">
-                    <button onclick="checkGameAnswer()" id="game-submit">Check</button>
-                    <p id="game-feedback"></p>
-                    <p id="game-score">Score: 0</p>
+        <div id="test-content">
+            <div id="test-canvas-container"></div>
+            <div id="test-panel">
+                <div id="test-timer">
+                    <span id="timer-label">Time:</span>
+                    <span id="timer-value">00:00</span>
+                </div>
+                <div id="test-equation"></div>
+                <div id="test-options"></div>
+                <div id="test-progress">
+                    <span id="progress-label">Question:</span>
+                    <span id="progress-value">1/10</span>
                 </div>
             </div>
-
-            <div id="test-section" class="section hidden">
-                <h2 id="test-title">Quiz</h2>
-                <div id="quiz-container">
-                    <button onclick="startQuiz()" id="start-quiz-btn">Start Quiz</button>
-                    <div id="quiz-question-area" class="hidden">
-                        <p id="quiz-question" class="medium-text"></p>
-                        <div id="quiz-options" class="options-grid"></div>
-                    </div>
-                    <p id="quiz-result"></p>
-                </div>
-            </div>
-        </main>
-
-        <footer>
-            <p>© 2025 OpenMLAtlas - Basic Math</p>
-        </footer>
+        </div>
     </div>
-    <script src="script.js"></script>
-</body>
 
+    <!-- Test Results Screen -->
+    <div id="results-screen" class="screen">
+        <div class="results-content">
+            <h1 id="results-title">Test Complete!</h1>
+            <div id="final-score">
+                <span id="final-score-value">0</span>
+                <span id="final-score-total">/10</span>
+            </div>
+            <p id="results-message"></p>
+            <div id="results-stats">
+                <div class="stat">
+                    <span class="stat-value" id="correct-count">0</span>
+                    <span class="stat-label" id="correct-label">Correct</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="wrong-count">0</span>
+                    <span class="stat-label" id="wrong-label">Wrong</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="time-taken">00:00</span>
+                    <span class="stat-label" id="time-label">Time</span>
+                </div>
+            </div>
+            <div class="results-buttons">
+                <button id="retry-test" class="primary-btn">Try Again</button>
+                <button id="back-to-menu-results" class="secondary-btn">Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
 </html>

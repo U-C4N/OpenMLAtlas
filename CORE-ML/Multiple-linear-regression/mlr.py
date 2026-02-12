@@ -1,74 +1,72 @@
-# Çoklu Doğrusal Regresyon Örneği
-# --------------------------------
-# Bu dosyada bir öğrencinin notunu (Grade), birden fazla özelliğe bakarak
-# tahmin etmeye çalışıyoruz. Örneğin: cinsiyet, yaş, şehir vb.
+# Multiple Linear Regression Example
+# ----------------------------------
+# In this script, we try to predict a student's grade (Grade) using multiple features
+# such as gender, age, city, etc.
 
-# Gerekli kütüphaneler
-import pandas as pd                 # Veri okuma ve tablo işlemleri
-import matplotlib.pyplot as plt      # Sonuçları görselleştirmek için
-from sklearn.linear_model import LinearRegression  # Çoklu doğrusal regresyon modeli
-from sklearn.model_selection import train_test_split  # Veriyi eğitim/test olarak bölmek için
-from sklearn.preprocessing import LabelEncoder        # Kategorik değişkenleri sayıya çevirmek için
-from sklearn.metrics import r2_score                  # Model başarısını ölçmek için
+# Required libraries
+import pandas as pd                      # Reading and manipulating tabular data
+import matplotlib.pyplot as plt          # Visualizing results
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from sklearn.metrics import r2_score
 
-# 1. Veriyi okuma
-# ---------------
-# Aynı klasördeki data.csv dosyasını okuyoruz.
+# 1. Read the dataset
+# -------------------
+# Read data.csv from the current folder.
 data = pd.read_csv('data.csv')
 
-# 2. Kategorik veriyi sayıya çevirme
-# -----------------------------------
-# 'Gender' sütunu metin ("Male", "Female" gibi). Makine öğrenmesi modelleri doğrudan
-# metinle çalışamadığı için önce bunları sayıya çeviriyoruz.
+# 2. Convert categorical columns to numeric
+# ----------------------------------------
+# Machine learning models work with numbers, not raw text.
+# Convert 'Gender' (e.g., "Male" / "Female") into numeric labels.
 le = LabelEncoder()
 data['Gender'] = le.fit_transform(data['Gender'])
 
-# Şehir bilgisini (City) de one-hot encoding ile sayısal hale getiriyoruz.
-# get_dummies: Her şehir için ayrı bir sütun oluşturur (0 veya 1 değer alır).
-# drop_first=True: İlk şehri atarak gereksiz fazladan sütun oluşmasını engeller.
+# One-hot encode the 'City' column.
+# get_dummies creates a separate 0/1 column for each city.
+# drop_first=True avoids an unnecessary extra column (dummy variable trap).
 data = pd.get_dummies(data, columns=['City'], drop_first=True)
 
-# 3. Özellikler (X) ve hedef değişken (y)
-# --------------------------------------
-# Grade: Tahmin etmeye çalıştığımız hedef değişken (öğrencinin notu).
-# Diğer tüm sütunlar: Modelin kullanacağı giriş özellikleri.
-x = data.drop('Grade', axis=1)  # Özellikler (giriş)
-y = data['Grade']               # Hedef (çıktı)
+# 3. Split into features (X) and target (y)
+# -----------------------------------------
+# Grade is the value we want to predict.
+X = data.drop('Grade', axis=1)
+y = data['Grade']
 
-# 4. Veriyi eğitim ve test olarak ayırma
-# --------------------------------------
-# test_size=0.2: Verinin %20'si test için ayrılır, %80'i eğitimde kullanılır.
-# random_state=42: Her seferinde aynı bölünmeyi elde etmek için sabit sayı.
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+# 4. Train/test split
+# -------------------
+# test_size=0.2: 20% test, 80% training.
+# random_state=42: makes the split reproducible.
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# 5. Modeli oluşturma ve eğitme
-# -----------------------------
+# 5. Build and train the model
+# ----------------------------
 model = LinearRegression()
-model.fit(x_train, y_train)
+model.fit(X_train, y_train)
 
-# 6. Test verisi üzerinde tahmin yapma
-# ------------------------------------
-y_pred = model.predict(x_test)
+# 6. Predict on the test set
+# --------------------------
+y_pred = model.predict(X_test)
 
-# 7. Gerçek ve tahmin edilen notları yan yana gösterme
-# ----------------------------------------------------
-sonuc = pd.DataFrame({
-    'Actual_Grade': y_test.values,     # Gerçek notlar
-    'Predicted_Grade': y_pred          # Modelin tahmin ettiği notlar
+# 7. Compare actual vs predicted values
+# -------------------------------------
+results = pd.DataFrame({
+    'Actual_Grade': y_test.values,
+    'Predicted_Grade': y_pred,
 })
 
-print(sonuc)
+print(results)
 
-# 8. Model başarısını ölçme (R^2 skoru)
-# -------------------------------------
+# 8. Evaluate performance (R^2 score)
+# -----------------------------------
+# R^2 closer to 1 means better fit.
 r2 = r2_score(y_test, y_pred)
-print("R^2 skoru:", r2)
+print("R^2 score:", r2)
 
-# 9. Sonuçları görselleştirme
-# ---------------------------
-# X ekseni: Gerçek notlar
-# Y ekseni: Tahmin edilen notlar
-# Noktalar doğruya ne kadar yakınsa, model o kadar iyidir.
+# 9. Visualize: actual vs predicted scatter plot
+# ----------------------------------------------
+# If predictions are good, points should be close to a straight diagonal line.
 plt.scatter(y_test, y_pred, color='red')
 plt.xlabel('Actual Grade')
 plt.ylabel('Predicted Grade')

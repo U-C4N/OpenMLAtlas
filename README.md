@@ -9,26 +9,48 @@
 </p>
 
 <p align="center">
-  <a href="#-overview">Overview</a> •
-  <a href="#-algorithms">Algorithms</a> •
-  <a href="#-project-structure">Structure</a> •
-  <a href="#-getting-started">Getting Started</a> •
-  <a href="#-usage">Usage</a> •
-  <a href="#-contributing">Contributing</a>
+  <a href="#overview">Overview</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#algorithms">Algorithms</a> •
+  <a href="#project-structure">Project Structure</a> •
+  <a href="#getting-started">Getting Started</a> •
+  <a href="#usage">Usage</a> •
+  <a href="#contributing">Contributing</a>
 </p>
 
 ---
 
 ## Overview
 
-**OpenMLAtlas** is an educational repository designed to help beginners and intermediate learners understand machine learning algorithms through clean, well-commented Python implementations. Each algorithm comes with:
+**OpenMLAtlas** is an educational repository designed to help beginners and intermediate learners understand machine learning algorithms through clean, beginner-friendly Python implementations.
 
-- Detailed code comments explaining every step
-- Real-world analogies to make concepts intuitive
-- Sample datasets for hands-on practice
-- Visualizations to understand model behavior
+What you get in this repo:
 
-Whether you're a student, self-learner, or developer transitioning into ML, this atlas provides a solid foundation for understanding core machine learning concepts.
+- Clear, step-by-step Python scripts (one folder per topic)
+- Small sample datasets (`.csv`) to practice with
+- Simple visualizations to see model behavior
+
+## Quick Start
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/U-C4N/OpenMLAtlas.git
+cd OpenMLAtlas
+```
+
+2. Install dependencies (recommended)
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Run your first example
+
+```bash
+cd CORE-ML/Linear-regression
+python lineer.py
+```
 
 ## Algorithms
 
@@ -121,11 +143,6 @@ OpenMLAtlas/
 ├── assets/
 │   └── demo.gif                # Project demo animation
 │
-├── video/                      # Remotion video project
-│   ├── src/
-│   └── out/
-│
-├── convert_to_gif.py           # Video to GIF converter
 └── README.md
 ```
 
@@ -138,22 +155,26 @@ OpenMLAtlas/
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/U-C4N/OpenMLAtlas.git
-   cd OpenMLAtlas
-   ```
+1. Clone the repository
 
-2. **Install dependencies**
-   ```bash
-   pip install numpy pandas matplotlib scikit-learn
-   ```
+```bash
+git clone https://github.com/U-C4N/OpenMLAtlas.git
+cd OpenMLAtlas
+```
 
-3. **Run any algorithm**
-   ```bash
-   cd CORE-ML/Linear-regression
-   python lineer.py
-   ```
+2. Install dependencies
+
+Recommended:
+
+```bash
+pip install -r requirements.txt
+```
+
+Alternative (manual):
+
+```bash
+pip install numpy pandas matplotlib scikit-learn statsmodels
+```
 
 ## Usage
 
@@ -163,6 +184,10 @@ Each algorithm directory is self-contained. Navigate to any directory and run th
 # Linear Regression
 cd CORE-ML/Linear-regression
 python lineer.py
+
+# Multiple Linear Regression
+cd CORE-ML/Multiple-linear-regression
+python mlr.py
 
 # Decision Tree
 cd "CORE-ML/Decision Tree"
@@ -177,74 +202,15 @@ cd CORE-ML/Reinforcement-Learning
 python 02_ucb.py
 ```
 
-### Example Output
-
-**Linear Regression:**
-```
-   YearsExperience   Salary
-0              1.1  39343.0
-1              1.3  46205.0
-2              1.5  37731.0
-3              2.0  43525.0
-4              2.2  39891.0
-R2 Score: 0.9749...
-```
-
-**Random Forest:**
-```
-Prediction: [1]  # 1 = Hire, 0 = Don't hire
-```
-
-## Key Concepts Covered
-
-### Supervised Learning
-- **Regression**: Predicting continuous values (salary, price, temperature)
-- **Classification**: Predicting categories (spam/not spam, hired/not hired)
-
-### Model Evaluation
-- **R² Score**: How well the model explains variance
-- **Confusion Matrix**: Visualizing classification performance
-- **ROC/AUC**: Evaluating binary classifiers
-
-### Data Preprocessing
-- **Feature Scaling**: StandardScaler for normalization
-- **Label Encoding**: Converting categorical to numerical
-- **Train/Test Split**: Preventing overfitting
-
-### Reinforcement Learning
-- **Exploration vs Exploitation**: The fundamental trade-off
-- **UCB Algorithm**: Balancing known rewards with uncertainty
-
-## Dependencies
-
-| Package | Purpose |
-|---------|---------|
-| `numpy` | Numerical computations |
-| `pandas` | Data manipulation |
-| `matplotlib` | Visualization |
-| `scikit-learn` | ML algorithms |
-| `statsmodels` | Statistical models (optional) |
-
-Install all at once:
-```bash
-pip install numpy pandas matplotlib scikit-learn statsmodels
-```
-
 ## Contributing
 
 Contributions are welcome! Here's how you can help:
 
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/new-algorithm`)
-3. **Add** your implementation with detailed comments
-4. **Test** your code with sample data
-5. **Submit** a pull request
-
-### Guidelines
-- Follow the existing code style
-- Add comprehensive comments explaining each step
-- Include a sample dataset if applicable
-- Update README with new algorithm info
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/new-algorithm`)
+3. Add your implementation with clear, beginner-friendly comments
+4. Test your code with sample data
+5. Submit a pull request
 
 ## License
 

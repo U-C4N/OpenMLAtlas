@@ -1,89 +1,86 @@
-# 1. Gerekli kütüphaneleri içe aktarma
-# ------------------------------------
+# 1. Importing the required libraries
+# -----------------------------------
 
-# NumPy: Sayılarla (matris, vektör) çalışmamızı sağlayan temel bilimsel hesaplama kütüphanesi.
-# 'as np': Artık her yerde 'numpy' yerine kısaca 'np' yazacağız.
+# NumPy: A core library for numerical computing (arrays, vectors, matrices).
+# 'as np': We'll use the shorter alias 'np'.
 import numpy as np
 
-# Matplotlib.pyplot: Grafik çizmemizi sağlar (nokta, doğru, dağılım grafikleri vb.).
-# 'plt': Çizim için kullanacağımız kısa isim.
+# Matplotlib.pyplot: Used for plotting graphs and visualizing data.
+# 'plt': Short alias we will use when drawing plots.
 import matplotlib.pyplot as plt
 
-# Pandas: Verileri tablo (Excel sayfası gibi) şeklinde okumamızı ve işlememizi sağlar.
-# 'pd': Pandas için standart kısaltma.
+# Pandas: Lets us read data files and work with tabular data (like an Excel sheet).
+# 'pd': Standard alias for pandas.
 import pandas as pd
 
-# Scikit-learn (sklearn): Makine öğrenmesi algoritmalarını barındıran kütüphane.
-# LinearRegression: Basit doğrusal regresyon modelini kullanacağız.
+# Scikit-learn (sklearn): A popular library that contains many machine learning algorithms.
+# LinearRegression: The simple linear regression model we will use.
 from sklearn.linear_model import LinearRegression
 
-# r2_score: Modelimizin ne kadar iyi tahmin yaptığını ölçmek için kullanacağımız skor fonksiyonu.
-# (0 ile 1 arasında değer alır, 1'e ne kadar yakınsa o kadar iyi.)
+# r2_score: A metric to evaluate how good the predictions are.
+# (It typically ranges from 0 to 1; closer to 1 means a better fit.)
 from sklearn.metrics import r2_score
 
-# train_test_split: Veriyi "eğitim" ve "test" olarak ikiye ayıran fonksiyon.
-# Böylece modelimizi görmediği veriler üzerinde test edebiliriz.
+# train_test_split: Splits the dataset into "train" and "test" parts.
+# This lets us evaluate the model on data it has never seen before.
 from sklearn.model_selection import train_test_split
 
 
-# 2. Veriyi yükleme ve hazır hale getirme
-# ---------------------------------------
+# 2. Loading and preparing the data
+# ---------------------------------
 
-# pd.read_csv: Aynı klasördeki 'salary.csv' dosyasını okur ve tablo (DataFrame) haline getirir.
-# Bu dosyada her satır bir çalışana, sütunlar ise özelliklere (deneyim, maaş) karşılık gelir.
+# pd.read_csv: Reads the 'salary.csv' file from the current folder into a DataFrame (table).
+# Each row represents an employee. The columns store the input feature(s) and the target.
 df = pd.read_csv('salary.csv')
 
-# df.head(): İlk 5 satırı ekrana yazar.
-# Böylece verinin doğru okunup okunmadığını hızlıca kontrol ederiz.
+# Print the first 5 rows to quickly verify the data loaded correctly.
 print(df.head())
 
-# X: Bağımsız değişken(ler) yani giriş özellikleri.
-# Burada sadece 'YearsExperience' (deneyim yılı) bilgisini kullanıyoruz.
-# Çift köşeli parantez [[...]] kullanmamızın sebebi, sklearn'ün 2 boyutlu bir tablo beklemesidir.
+# X: The input feature(s) (independent variable).
+# We use double brackets [[...]] to keep X as a 2D table (DataFrame), which sklearn expects.
 X = df[["YearsExperience"]]
 
-# y: Bağımlı değişken, yani tahmin etmeye çalıştığımız değer.
-# Burada çalışanların 'Salary' (maaş) bilgisini tahmin etmek istiyoruz.
+# y: The target we want to predict (dependent variable).
 y = df["Salary"]
 
 
 
-# 3. Veriyi eğitim ve test olarak ayırma
-# --------------------------------------
+# 3. Splitting into training and test sets
+# ---------------------------------------
 
 # train_test_split:
-# - test_size=0.3: Verinin %30'unu test için ayırırız, %70'i eğitimde kalır.
-# - random_state=10: Her çalıştırmada aynı bölünme olsun diye sabit bir sayı veriyoruz.
-# X_train, y_train: Modelin "öğrenme" aşamasında göreceği örnekler.
-# X_test, y_test: Modelin daha önce görmediği, sadece performansı ölçmek için ayırdığımız örnekler.
+# - test_size=0.3: Use 30% of the data for testing and 70% for training.
+# - random_state=10: Ensures the split is reproducible across runs.
+# X_train, y_train: Data the model learns from.
+# X_test, y_test: Unseen data used only to evaluate performance.
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=10)
 
 
-# 4. Modeli oluşturma ve eğitme
-# -----------------------------
+# 4. Building and training the model
+# ----------------------------------
 
-# LinearRegression(): Doğrusal regresyon modelini oluşturur.
+# LinearRegression(): Creates a linear regression model.
 model = LinearRegression()
 
-# model.fit: Eğitim (training) adımı.
-# Model, X_train -> y_train arasındaki ilişkiyi öğrenir (en uygun doğruyu bulur).
+# model.fit: The training step.
+# The model learns the relationship between X_train (years) and y_train (salary).
 model.fit(X_train, y_train)
 
 
-# 5. Tahmin yapma
-# ---------------
+# 5. Making predictions
+# ---------------------
 
-# Eğittiğimiz modeli kullanarak X_test için maaş tahminleri üretiriz.
+# Use the trained model to predict salaries for the X_test samples.
 y_pred = model.predict(X_test)
 
 
-# 6. Başarıyı ölçme
-# -----------------
+# 6. Evaluating the model
+# -----------------------
 
-# r2_score: Gerçek değerler ile (y_test) tahminleri (y_pred) karşılaştırır.
-# 1'e yakınsa iyi, 0'a yakınsa zayıf demektir.
+# r2_score compares the true values (y_test) with the predictions (y_pred).
+# Values closer to 1 indicate a better fit.
 r2 = r2_score(y_test, y_pred)
-print(f"R2 Skoru: {r2}")
+print(f"R2 score: {r2}")
 
-# Üretilen tahminleri görmek için yazdırıyoruz.
+# Print the predicted salaries to inspect the results.
 print(y_pred)
